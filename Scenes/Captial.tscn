@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Captial.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Arrow.tscn" type="PackedScene" id=2]
+
+[node name="Captial" type="Node2D"]
+position = Vector2( 76.8905, 111.554 )
+script = ExtResource( 1 )
+arrow = ExtResource( 2 )
+
+[node name="ArrowTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.3571
+margin_top = 25.1469
+margin_right = 19.6429
+margin_bottom = 39.1469
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="ArrowTimer" to="." method="_on_ArrowTimer_timeout"]
